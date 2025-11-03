@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed | Elite Travel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Elite Travel</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Destinations</a></li>
+        <li><a href="#">Bookings</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="confirmation">
+    <h2>Thank You for Booking!</h2>
+    <p>Your tour to <span id="destination"></span> is confirmed.</p>
+    <p>We’ve sent a confirmation to <span id="email"></span>.</p>
+    <a href="index.html" class="book-btn">Back to Home</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Elite Travel. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('destination').textContent = params.get('destination') || 'your destination';
+    document.getElementById('email').textContent = params.get('email') || 'your email';
+  </script>
+</body>
+</html>
